@@ -1,0 +1,884 @@
+<style>
+    .steps {
+        display: none;
+    }
+</style>
+<link type="text/css" rel="stylesheet" href="http://annotorious.github.io/latest/themes/dark/annotorious-dark.css"/>
+<div class="row skeleton"> 
+    <div id="area0" class="span6">
+        <!-- Questionary -->
+        <!-- Step 0-->
+        <div id="step_0" class="steps">
+            <h1>Is there a building or ruins in this photo?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_0 btn btn-success btn-answer" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+                <button class="step_0 btn btn-danger btn-answer" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
+                <!-- If the user clicks this button, the saved answer will be value="NoPhoto"-->
+                <button class="step_0 btn btn-answer" value='NoPhoto'><i class="icon icon-white icon-exclamation"></i> No photo</button>
+                <!-- If the user clicks this button, the saved answer will be value="Unknown"-->
+                <button class="step_0 btn btn-answer" value='Unknown'><i class="icon icon-white icon-question-sign"></i> I don't know</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 0 -->
+
+        <!-- Step 1-->
+        <div id="step_1" class="steps">
+            <h1>Can this photo be geo-located?</h1>
+            <p>
+            <a target="_blank" id="uri" class="btn" href=""><i class="icon icon-white icon-search"></i> Get more clues about the picture</a>
+            </p>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_1 btn btn-success btn-answer" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+                <button class="step_1 btn btn-danger btn-answer" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
+                <button class="step_1 btn btn-answer" value='Unknown'><i class="icon icon-white icon-question-sign"></i> I don't know</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 1 -->
+
+        <!-- Step 2-->
+        <div id="step_2" class="steps">
+            <h1>Where is this building?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_2 btn btn-answer" value='Corner'>On a corner</button>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+                <button class="step_2 btn btn-answer" value='Street'>On a street between buildings</button>
+                <button class="step_2 btn btn-answer" value='Alone'>Stand alone</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 2 -->
+
+
+        <!-- Step 3-->
+        <div id="step_3" class="steps">
+            <h1>If with other buildings, are adjacent buildings:</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_3 btn btn-answer" value='Taller'>Taller</button>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+                <button class="step_3 btn btn-answer" value='Shorter'>Shorter</button>
+                <button class="step_3 btn btn-answer" value='Same'>The same</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 3 -->
+
+        <!-- Step 4-->
+        <div id="step_4" class="steps">
+            <h1>Number of stories:</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <p>
+                <span class="label label-info"><i class="icon icon-bullhorn"></i></span> Type 0 if you cannot count the number of stories
+                </p>
+                <input id="n_stories" type="text" name="stories" value="0" >
+                <br/>
+                <button class="button step_4 btn btn-answer">Go to next step</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 4 -->
+
+        <!-- Step 5-->
+        <div id="step_5" class="steps">
+            <h1>Use:</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <ul class="thumbnails">
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm6.staticflickr.com/5131/5400460717_02813584fe_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/30845644@N04/5400460717/">Onnola</a></p>
+                            <button class="step_5 btn btn-answer" value='Residential'>Residential</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm3.staticflickr.com/2709/4124272497_986f7718fc_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/elipousson/4124272497/">Eli Pousson</a></p>
+                            <button class="step_5 btn btn-answer" value='Commercial'>Commercial</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm8.staticflickr.com/7138/7692614668_dd7e50a91b_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/39414003@N04/7692614668/">Trevor McGoldrick</a></p>
+                            <button class="step_5 btn btn-answer" value='Governmnent'>Government</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm1.staticflickr.com/223/481748533_6a4e7747ba_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/mindfieldz/481748533/">Ben</a></p>
+                            <button class="step_5 btn btn-answer" value='Industrial'>Industrial</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm9.staticflickr.com/8040/7980049013_f302d9146e_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/uicdigital/7980049013/">Digital Collections UIC</a></p>
+                            <button class="step_5 btn btn-answer" value='Mixed'>Mixed</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm6.staticflickr.com/5004/5327709499_1a8fd870fb_q.jpg">
+                            <p style="font-size:10px;"><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/soitoronto/5327709499/">SOI Toronto Centres</a></p>
+                            <button class="step_5 btn btn-answer" value='Unknown'>Unknown</button>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 5 -->
+
+        <!-- Step 6-->
+        <div id="step_6" class="steps">
+            <h1>Is there any visible damage?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_6 btn btn-answer btn-success" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+                <button class="step_6 btn btn-answer btn-danger" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 6 -->
+
+        <!-- Step 7-->
+        <div id="step_7" class="steps">
+            <h1>Is there a partial or complete collapse?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <ul class="thumbnails" style="text-align:center">
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm5.staticflickr.com/4024/4344299010_7f8dedb7c6_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/bbcworldservice/4344299010/">BBC World Service</a></p>
+
+                            <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                            <button class="step_7 btn btn-answer" value='Complete'>Complete</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm1.staticflickr.com/184/436052540_7e61c72ec9_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/dherholz/436052540/">Herkie</a></p>
+
+                            <!-- If the user clicks this button, the saved answer will be value="no"-->
+                           <button class="step_7 btn btn-answer" value='Partial'>Partial</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm1.staticflickr.com/27/37739120_6ca728d79b_q.jpg">
+                            <p><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/giantginkgo/37739120/">Giant Ginko</a></p>
+                            <button class="step_7 btn btn-answer" value='No'>No Collapse</button>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 7 -->
+
+        <!-- Step 8-->
+        <div id="step_8" class="steps">
+            <h1>Is this building:</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <ul class="thumbnails" style="text-align:center">
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm5.staticflickr.com/4020/4502347123_1bb7c042e9_q.jpg">
+                            <p><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/22760956@N08/4502347123/">HEA Engineering</a></p>
+                            <button class="step_8 btn btn-answer" value='Reinforced'>Reinforced Concrete</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm3.staticflickr.com/2756/4267303030_0dfd5fcae0_q.jpg">
+                            <p><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/horiavarlan/4267303030/">Horia Varlan</a></p>
+                            <button class="step_8 btn btn-answer" value='Masonry'>Masonry</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm4.staticflickr.com/3157/2915414263_9308959bfe_q.jpg">
+                            <p><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/himmelskratzer/2915414263/">Himmelskratzer</a></p>
+                            <button class="step_8 btn btn-answer" value='Timber'>Timber</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm2.staticflickr.com/1211/778576564_cbea02a1e8_q.jpg">
+                            <p><span class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/untitledprojects/778576564/">Conrad Bakker</a></p>
+                            <button class="step_8 btn btn-answer" value='Other'>Other</button>
+                        </div>
+                    </li>
+                </ul>
+                <!-- If the user clicks this button, the saved answer will be value="no"-->
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 8 -->
+
+        <!-- Step 9-->
+        <div id="step_9" class="steps">
+            <h1>Do you see cracks in the columns or beams?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_9 btn btn-answer btn-success" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <button class="step_9 btn btn-answer btn-danger" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 9 -->
+
+        <!-- Step 10-->
+        <div id="step_10" class="steps">
+            <h1>Draw boxes over the cracks</h1>
+            <p><span class="label label-info"><i class="icon icon-bullhorn"></i> Note</span>  Find all the cracks in the picture. If you want to fix one, delete it and start again.</p>
+            <div id="crack_category" style="display:none">
+                <h2>Is the crack?</h2>
+                <button class="step_10 btn btn-answer" value="Joint">At a Joint</button>
+                <button class="step_10 btn btn-answer" value="Shear">Shear damage</button>
+                <button class="step_10 btn btn-answer" value="Flexural">Flexural Crack</button>
+            </div>
+            <div id="crack_rebars" style="display:none">
+                <h2>Do you see rebars that are:</h2>
+                <button class="step_10 btn btn-answer" value='Buckled'>Buckled</button>
+                <button class="step_10 btn btn-answer" value='Slipped'>Slipped</button>
+            </div>
+            <div id="answer" style="margin-top:5px;"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button id="crack_submit" class="step_10 btn btn-answer" style="display:none" value='Submit'>No more cracks, go to next step</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 10 -->
+
+        <!-- Step 11-->
+        <div id="step_11" class="steps">
+            <h1>Do you see cracks in the walls?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_11 btn btn-answer btn-success" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <!-- If the user cli11ks this button, the saved answer will be value="no"-->
+                <button class="step_11 btn btn-answer btn-danger" value='No'><i class="icon icon-white icon-thumbs-down"></i> No</button>
+                <button class="step_11 btn btn-answer" value='Unknown'>I don't know</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 11 -->
+
+        <!-- Step 12-->
+        <div id="step_12" class="steps">
+            <h1>Draw boxes over the cracks</h1>
+            <p><span class="label label-info"><i class="icon icon-bullhorn"></i> Note</span> You can add a description for each crack if you want</p>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_12 btn btn-answer" value='Submit'>No more cracks, go to next step</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 12 -->
+
+        <!-- Step 13-->
+        <div id="step_13" class="steps">
+            <h1>What is the structural system?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <ul class="thumbnails" style="text-align:center">
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm4.staticflickr.com/3458/3258811348_05b0df4201_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="www.flickr.com/photos/cynchang/3258811348">Cynthia Chang</a></p>
+                            <button class="step_13 btn btn-answer" value='Brick'>Brick</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm4.staticflickr.com/3737/10282869256_a308d00abe_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/12508217@N08/10282869256">Sam Howzit</a></p>
+                            <button class="step_13 btn btn-answer" value='Stone'>Stone</button>
+
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm3.staticflickr.com/2379/5758799883_c0ae93810a_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/ian-w-scott/5758799883/">Ian W Scott</a></p>
+                            <button class="step_13 btn btn-answer" value='MudBrick'>Mud Brick</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm1.staticflickr.com/48/114418119_08e9541793_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/96419455@N00/114418119/">Andrea Stansbury</a></p>
+                            <button class="step_13 btn btn-answer" value='Adobe'>Adobe</button>
+
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm5.staticflickr.com/4059/4269762561_5393ece680_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/9822107@N08/4269762561/">Sherrie Thai</a></p>
+                            <button class="step_13 btn btn-answer" value='Concrete'>Concrete</button>
+
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm5.staticflickr.com/4067/4478406717_caa012ac5a_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/garryknight/4478406717/">Garry Knight</a></p>
+                            <button class="step_13 btn btn-answer" value='Mixed'>Mixed</button>
+                        </div>
+                    </li>
+                    <li class="span2">
+                        <div class="thumbnail">
+                            <img src="http://farm6.staticflickr.com/5065/5552703516_ec11ddb606_q.jpg">
+                            <p><i class="icon icon-picture"></i> <a href="http://www.flickr.com/photos/21649179@N00/5552703516/">Fdecomite</a></p>
+                            <button class="step_13 btn btn-answer" value='Other'>Other</button>
+                        </div>
+                    </li>
+                </ul>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 13 -->
+        
+        <!-- Step 14-->
+        <div id="step_14" class="steps">
+            <h1>Do you see any damage in the walls of the building?</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_14 btn btn-answer btn-success" value='Yes'><i class="icon icon-white icon-thumbs-up"></i> Yes</button>
+                <button class="step_14 btn btn-answer btn-danger" value='No'><i class="icon icon-white icon-thumbs-up"></i> No</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 14 -->
+
+        <!-- Step 15-->
+        <div id="step_15" class="steps">
+            <h1>Draw boxes over damaged areas</h1>
+            <p><span class="label label-info"><i class="icon icon-bullhorn"></i> Note</span>  Find all the damaged areas in the picture. If you want to fix one, delete it and start again.</p>
+            <div id="damage_category" style="display:none">
+                <h2>Is the damaged area?</h2>
+                <button class="step_15 btn btn-answer" value="collapsedWall">A collapsed Wall</button>
+                <button class="step_15 btn btn-answer" value="separationJoinedWalls">Separation between joined walls</button>
+                <button class="step_15 btn btn-answer" value="diagonalCracksCornerFacade">Diagonal cracks at the corner and facade walls</button>
+                <button class="step_15 btn btn-answer" value="diagonalCracksCornerDoorWindow">Diagonal cracks at corner of doors and windows</button>
+            </div>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_15 btn btn-answer" value='Submit'>No more damaged areas, go to next step</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 15 -->
+
+        <!-- Step 16-->
+        <div id="step_16" class="steps">
+            <h1>Draw boxes over any non-structural damage that you can see (eg roofs and gables, chimneys etc)</h1>
+            <p><span class="label label-info"><i class="icon icon-bullhorn"></i> Note</span> Classify them with the following categories:
+            <ul>
+                <li>Roof</li>
+                <li>Gables</li>
+                <li>etc.</li>
+            </ul>
+            </p>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="step_16 btn btn-answer" value='Submit'>No more non-structural damage, go to next step</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Step 16 -->
+
+        <!-- Last Stepp -->
+        <div id="last_step" class="steps">
+            <h1>Thanks! You have fully analyzed one picture</h1>
+            <div id="answer"> <!-- Start DIV for the submission buttons -->
+                <!-- If the user clicks this button, the saved answer will be value="yes"-->
+                <button class="last_step btn btn-answer btn-large btn-success" value='Submit'>Save it and load another one</button>
+            </div><!-- End of DIV for the submission buttons -->
+        </div>
+        <!-- End Last Step-->
+        <!-- End questionary -->
+        <div style="margin-top:5px;">
+            <button class="back btn btn-answer" style="display:none;"><i class="icon icon-chevron-left"></i> Go to previous step</button>
+        </div>
+    </div>
+    <!--<div id="img-details" class="span4">-->
+        <!-- Collapse -->
+        <!--<div class="accordion" id="accordion2">
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                       EXIF data 
+                    </a>
+                </div>
+                <div id="collapseOne" class="accordion-body collapse in">
+                    <div id="exif" class="accordion-inner">
+                        This picture does not have any EXIF data.
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <!-- End collapse -->
+        <!--</div>-->
+    <div id="area1" class="span6">
+        <span id="photo-link">
+                <img id="photo" src="http://i.imgur.com/GeHxzb7.png" style="max-width=100%">
+        </span>
+    </div>
+</div><!-- End of Skeleton Row -->
+
+<div class="row skeleton">
+    <div class="span12">
+        <div id="disqus_show_btn" style="margin-top:5px;">
+            <button class="btn btn-primary btn-large btn-disqus" onclick="loadDisqus()"><i class="icon-comments"></i> Show comments</button>
+            <button class="btn btn-large btn-disqus" onclick="loadDisqus()" style="display:none"><i class="icon-comments"></i> Hide comments</button>
+        </div><!-- End of Disqus Button section -->
+        <!-- Disqus thread for the given task -->
+        <div id="disqus_thread" style="margin-top:5px;display:none"></div>
+    </div>
+</div>
+
+<div class="row">
+    <!-- Success and Error Messages for the user --> 
+    <div class="span6 offset2" style="height:50px">
+        <div id="success" class="alert alert-success" style="display:none;">
+            <a class="close">×</a>
+            <strong>Well done!</strong> Your answer has been saved
+        </div>
+        <div id="loading" class="alert alert-info" style="display:none;">
+            <a class="close">×</a>
+            Loading next task...
+        </div>
+        <div id="taskcompleted" class="alert alert-info" style="display:none;">
+            <strong>The task has been completed!</strong> Thanks a lot!
+        </div>
+        <div id="finish" class="alert alert-success" style="display:none;">
+            <strong>Congratulations!</strong> You have participated in all available tasks!
+            <br/>
+            <div class="alert-actions">
+                <a class="btn small" href="/">Go back</a>
+                <a class="btn small" href="/app">or, Check other applications</a>
+            </div>
+        </div>
+        <div id="error" class="alert alert-error" style="display:none;">
+            <a class="close">×</a>
+            <strong>Error!</strong> Something went wrong, please contact the site administrators
+        </div>
+    </div> <!-- End Success and Error Messages for the user -->
+</div> <!-- End of Row -->
+
+
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    function loadDisqus() {
+    $("#disqus_thread").toggle();
+    $(".btn-disqus").toggle();
+    var disqus_shortname = 'pybossa'; // required: replace example with your forum shortname
+    //var disqus_identifier = taskId;
+    var disqus_developer = 1;
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    }
+
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<script type="text/javascript" src="/static/js/vendor/annotorious.min.js"></script>
+<script type="text/javascript" src="/static/vendor/jquery.js"></script>
+<script type="text/javascript" src="http://annotorious.github.io/demos/semantic-tagging-plugin.js"></script>
+<script>
+      //anno.addPlugin('SemanticTagging', { endpoint_url: 'http://samos.mminf.univie.ac.at:8080/wikipediaminer' });
+</script>
+<script>
+
+function zoomin(){
+    $("#area0").removeClass("span6");
+    $("#area1").removeClass("span6");
+    $("#area0").addClass("span12");
+    $("#area1").addClass("span12");
+}
+
+function zoomout() {
+    $("#area0").removeClass("span12");
+    $("#area1").removeClass("span12");
+    $("#area0").addClass("span6");
+    $("#area1").addClass("span6");
+}
+pybossa.taskLoaded(function(task, deferred) {
+    if ( ! $.isEmptyObject(task) ) {
+        // load image from flickr
+        var img = $('<img />');
+        img.load(function() {
+            // continue as soon as the image is loaded
+            deferred.resolve(task);
+        });
+        img.attr('src', task.info.url);
+        img.attr('id', 'anno_' + task.id);
+        img.addClass('img-polaroid');
+        img.addClass('annotable');
+        task.info.image = img;
+        // Initiate answer with default values
+        task.steps = [0];
+        task.answer = {"img": task.info.url,
+                       "task_id": task.id,
+                       "building": "",
+                       "geoLocation": "",
+                       "buildingLocation": "",
+                       "buildingAdjacent": "",
+                       "buildingStories": 0,
+                       "buildingUse": "",
+                       "buildingVisibleDamage": "",
+                       "buildingCollapse": "",
+                       "buildingMaterial": "",
+                       "rcdamageWalls": "",
+                       "rcdamageWallsCracksLocations": "",
+                       "rcdamageColumnBeams": "",
+                       "rcdamageColumnBeamsCracksLocations": "",
+                       "rcdamageNonstructural": "",
+                       "mdamageSystem": "",
+                       "mdamage": "",
+                       "mdamageType": "",
+                       "mdamageNonstructural": ""}
+    }
+    else {
+        deferred.resolve(task);
+    }
+});
+
+pybossa.presentTask(function(task, deferred) {
+    if ( !$.isEmptyObject(task) ) {
+        $('#photo-link').html('').append(task.info.image);
+        //$("#question").html(task.info.question);
+        $('#task-id').html(task.id);
+        $("#uri").attr("href", task.info.uri);
+        $(".back").hide();
+
+        // Hide all steps first 
+        $(".steps").hide();
+        // Show first step
+        $("#step_0").show();
+        // Reset input fields
+        $("#n_stories").val(0);
+
+        $('.btn-answer').off('click').on('click', function(evt) {
+            // Get value of pressed button
+            var tmp = $(evt.target).attr("value");
+            // Check if step is 0
+            if ($(evt.target).hasClass('step_0')) {
+                task.answer.building = tmp;
+                $(".steps").hide();
+                if (tmp == "Yes") {
+                    task.steps.push(1);
+                    $("#step_1").show();
+                    $(".back").show();
+                    }
+                else {
+                    $("#last_step").show();
+                }
+            } 
+            // Check if step is 1
+            if ($(evt.target).hasClass('step_1')) {
+                task.answer.geoLocation = tmp;
+                $(".steps").hide();
+                task.steps.push(2);
+                $("#step_2").show();
+            }
+
+            // Check if step is 2
+            if ($(evt.target).hasClass('step_2')) {
+                task.answer.buildingLocation = tmp;
+                $(".steps").hide();
+                if (tmp != 'Alone') {
+                    task.steps.push(3);
+                    $("#step_3").show();
+                }
+                else {
+                    task.steps.push(4);
+                    $("#step_4").show();
+                }
+            }
+
+            // Check if step is 3
+            if ($(evt.target).hasClass('step_3')) {
+                task.answer.buildingAdjacent = tmp;
+                $(".steps").hide();
+                task.steps.push(4);
+                $("#step_4").show();
+            }
+
+            // Check if step is 4
+            if ($(evt.target).hasClass('step_4')) {
+                // This steps gets the info from an input field
+                var tmp = $("#n_stories").val();
+                task.answer.buildingStories = tmp;
+                $(".steps").hide();
+                task.steps.push(5);
+                $("#step_5").show();
+            }
+
+            // Check if step is 5
+            if ($(evt.target).hasClass('step_5')) {
+                task.answer.buildingUse= tmp;
+                $(".steps").hide();
+                task.steps.push(6);
+                $("#step_6").show();
+            }
+
+            // Check if step is 6
+            if ($(evt.target).hasClass('step_6')) {
+                task.answer.buildingVisibleDamage = tmp;
+                $(".steps").hide();
+                if (tmp == 'Yes') {
+                    task.steps.push(7);
+                    $("#step_7").show();
+                }
+                else {
+                    $("#last_step").show();
+                }
+            }
+
+            // Check if step is 7
+            if ($(evt.target).hasClass('step_7')) {
+                task.answer.buildingCollapse= tmp;
+                $(".steps").hide();
+                if (tmp == 'No') {
+                    task.steps.push(8);
+                    $("#step_8").show();
+                }
+                else {
+                    $("#last_step").show();
+                }
+            }
+              
+            // Check if step is 8
+            if ($(evt.target).hasClass('step_8')) {
+                task.answer.buildingMaterial= tmp;
+                $(".steps").hide();
+                if (tmp == 'Reinforced') {
+                    task.steps.push(9);
+                    $("#step_9").show();
+                }
+                else if (tmp == 'Masonry') {
+                    task.steps.push(13);
+                    $("#step_13").show();
+                }
+                else {
+                    $("#last_step").show();
+                }
+            }
+
+            // Check if step is 9
+            if ($(evt.target).hasClass('step_9')) {
+                task.answer.rcdamageColumnsBeams = tmp;
+                $(".steps").hide();
+                if (tmp == 'Yes') {
+                    zoomin();
+                    anno.makeAnnotatable(document.getElementById('anno_' + task.id));
+                    anno.addHandler('onAnnotationCreated', function(annotation){
+                            $("#crack_category").show();
+                            });
+                    task.steps.push(10);
+                    $("#step_10").show();
+                }
+                else {
+                    task.steps.push(11);
+                    $("#step_11").show();
+                }
+            }
+
+            // Check if step is 10
+            if ($(evt.target).hasClass('step_10')) {
+                if (tmp == 'Submit') {
+                    task.answer.rcdamageColumnsBeamsCracksLocations = anno.getAnnotations();
+                    anno.reset();
+                    $(".steps").hide();
+                    task.steps.push(11);
+                    $("#step_11").show();
+                }
+                else if ((tmp != 'Buckled') && (tmp != 'Slipped')) {
+                    var all = anno.getAnnotations();
+                    var last = all[all.length-1];
+                    last.rcdamageColumnsBeams = tmp;
+                    $("#crack_category").hide();
+                    $("#crack_rebars").show();
+                }
+                else {
+                    var all = anno.getAnnotations();
+                    var last = all[all.length-1];
+                    last.rebars = tmp;
+                    last.text = 'Type: ' + last.rcdamageColumnsBeams + '\nRebars: ' + last.rebars + '\nComment: ' + last.text;
+                    $("#crack_rebars").hide();
+                    $("#crack_submit").show();
+                }
+            }
+
+            // Check if step is 11
+            if ($(evt.target).hasClass('step_11')) {
+                task.answer.rcdamageWalls = tmp;
+                $(".steps").hide();
+                if (tmp == 'Yes') {
+                    anno.makeAnnotatable(document.getElementById('anno_' + task.id));
+                    task.steps.push(12);
+                    $("#step_12").show();
+                }
+                else {
+                    $("#last_step").show();
+                }
+            }
+
+            // Check if step is 12
+            if ($(evt.target).hasClass('step_12')) {
+                task.answer.rcdamageWallsCracksLocations = anno.getAnnotations();
+                anno.reset();
+                $(".steps").hide();
+                $("#last_step").show();
+            }
+
+
+            // Check if step is 13
+            if ($(evt.target).hasClass('step_13')) {
+                task.answer.mdamageSystem = tmp;
+                $(".steps").hide();
+                task.steps.push(14);
+                $("#step_14").show();
+            }
+
+            // Check if step is 14
+            if ($(evt.target).hasClass('step_14')) {
+                task.answer.mdamage = tmp;
+                $(".steps").hide();
+                if (tmp == 'Yes') {
+                    zoomin();
+                    anno.makeAnnotatable(document.getElementById('anno_' + task.id));
+                    anno.addHandler('onAnnotationCreated', function(annotation){
+                            $("#damage_category").show();
+                            });
+                    task.steps.push(15);
+                    $("#step_15").show();
+                }
+                else {
+                    $("#last_step").show();
+                }
+            }
+
+            // Check if step is 15
+            if ($(evt.target).hasClass('step_15')) {
+                if (tmp == 'Submit') {
+                    task.answer.mdamageType = anno.getAnnotations();
+                    anno.reset();
+                    $(".steps").hide();
+                    anno.makeAnnotatable(document.getElementById('anno_' + task.id));
+                    task.steps.push(16);
+                    $("#step_16").show();
+                }
+                else {
+                    var all = anno.getAnnotations();
+                    var last = all[all.length-1];
+                    last.mdamageType = tmp;
+                    last.text = 'Type: ' + tmp + '\nComment: ' + last.text;
+                    $("#damage_category").hide();
+                }
+            }
+
+            // Check if step is 16
+            if ($(evt.target).hasClass('step_16')) {
+                task.answer.mdamageNonstructural = anno.getAnnotations();
+                anno.reset();
+                $(".steps").hide();
+                $("#last_step").show();
+            }
+
+            // Check if step is last
+            if ($(evt.target).hasClass('last_step')) {
+                zoomout();
+                pybossa.saveTask(task.id, task.answer).done(function() {
+                deferred.resolve();
+                })
+            }
+
+            // Check if back button is pressed
+            if ($(evt.target).hasClass('back')) {
+                console.log(JSON.stringify(task.steps));
+                zoomout();
+                $("#last_step").hide();
+                var last_step = task.steps.pop();
+                var id = "#step_" + last_step.toString();
+                var prev_id = "#step_" + task.steps[task.steps.length - 1];
+                $(id).hide();
+                $(prev_id).show();
+                if (prev_id == "#step_0") {
+                    $(".back").hide();
+                    task.steps = [0];
+                }
+
+                if ((prev_id == "#step_9") || (prev_id == "#step_11") || (prev_id == '#step_14') || (prev_id == '#step_15')) {
+                    anno.reset();
+                    $("#crack_category").hide();
+                    $("#crack_rebars").hide();
+                    $("#crack_rebars").hide();
+                    $("#damage_category").hide();
+                    $("#answer").hide();
+                }
+
+                console.log(JSON.stringify(task.steps));
+            }
+            // print answer on console
+            // console.log(JSON.stringify(task.answer));
+        });
+
+
+        //$("#btn-submit").html("<i class='icon-repeat'></i> I don't recognize any person, try next one");
+        //$("#btn-submit").removeClass("btn-success");
+        //if (!$.isEmptyObject(task.info.exif)) {
+        //    //var keys = Object.keys(task.info.exif);
+        //    //$("#exif").html("");
+        //    //for(i=0;i<keys.length;i++){
+        //    //$("#exif").append("<p><strong>" + keys[i] + "</strong>: " + task.info.exif[keys[i]] + "</p>");
+        //    //}
+        //    $("#exif").html(JSON.stringify(task.info.exif));
+        //}
+        //else {
+        //    $("#exif").html("There is no EXIF data in this picture.");
+        //}
+
+        //anno.makeAnnotatable(document.getElementById('anno_' + task.id));
+
+        //anno.addHandler('onAnnotationCreated', function(annotation) {
+        //    //console.log(annotation.text);
+        //    $("#btn-submit").html("<i class='icon icon-save'></i> Save current annotations");
+        //    $("#btn-submit").addClass("btn-success");
+        //});
+
+        //$('.btn-answer').off('click').on('click', function(evt) {
+        //    var answer = $(evt.target).attr("value");
+        //    if (typeof answer != 'undefined') {
+        //        //console.log(answer);
+        //        pybossa.saveTask(task.id, anno.getAnnotations()).done(function() {
+        //            deferred.resolve();
+        //        });
+        //        $("#loading").fadeIn(500);
+        //        if ($("#disqus_thread").is(":visible")) {
+        //            $('#disqus_thread').toggle();
+        //            $('.btn-disqus').toggle();
+        //        }
+        //    }
+        //    else {
+        //        $("#error").show();
+        //    }
+        //});
+        $("#loading").hide();
+    }
+    else {
+        $(".skeleton").hide();
+        $("#loading").hide();
+        $("#finish").fadeIn(500);
+    }
+});
+
+pybossa.run('links');
+</script>

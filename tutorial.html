@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="span12">
+        <div id="modal" class="modal hide fade">
+            <div class="modal-header">
+                <h3>Building damage assessment tutorial</h3>
+            </div>
+             <div id="0" class="modal-body" style="display:none">
+                <p><strong>Hi!</strong> This is a <strong>demo application</strong> that shows how you can perform a structural building damage analysis from in photos using the PyBossa framework in Crowdcrafting.org.
+               </p>
+            </div>
+			<div id="1" class="modal-body" style="display:none">
+				<p>Volunteers browse the internet looking for photos relevant to a particular disaster, which are then loaded in this application. For each task one of these photos will be displayed to you and you will be asked a series of questions about the buildings or buildings that you see in the photos. Click on Next to go through a quick tutorial before starting the analysis.</p>
+            </div>
+            <div id="2" class="modal-body" style="display:none">
+                <p>The application will load a photo such as the one shown below and ask you the question: <strong>Is there a building or ruins in this photo?</strong></p> <img src="http://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Haiti_Earthquake_building_damage.jpg/640px-Haiti_Earthquake_building_damage.jpg"width="300" height="226"></img> 
+                <p>You will have 3 possible answers:
+                <ul>
+                    <li>Yes,</li>
+                    <li>No, and</li>
+                    <li>I don't know</li>
+                </ul>
+                </p>
+                <p>
+                </p>
+                <p>All you have to do is to click in one of the three possible answers and, if you answer yes, you will move onto the next question. If you answer No or I don't know you will move onto the next photo.</p>
+            </div>
+			<div id="3" class="modal-body" style="display:none">
+                <p>Next you will be asked if this photo can be geo-located.</p>
+                <p>You will have 3 possible answers:
+                <ul>
+                    <li>Yes,</li>
+                    <li>No, and</li>
+                    <li>I don't know</li>
+                </ul>
+                </p>
+                <p>
+                </p>
+                <p>You can use the "Context" link to see where the photo came from and look for the names of any towns or other clues as to its location. Once you have answered you will move onto the next question</p>
+            </div>
+           <div id="4" class="modal-body" style="display:none">
+                <p>You will then be asked a series of questions about the damage that you see in the building that you are looking at</p> 
+				<p>If you are not sure what a questions means, you can get help and explanations by clicking on the "Help" button for that question</p> 
+            </div>
+            <div class="modal-footer">
+                <a id="prevBtn" href="#" onclick="showStep('prev')" class="btn">Previous</a>
+                <a id="nextBtn" href="#" onclick="showStep('next')" class="btn btn-success">Next</a>
+                <a id="startContrib" href="../links/newtask" class="btn btn-primary" style="display:none"><i class="icon-thumbs-up"></i> Try the demo!</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var step = -1;
+    function showStep(action) {
+        $("#" + step).hide();
+        if (action == 'next') {
+            step = step + 1;
+        }
+        if (action == 'prev') {
+            step = step - 1;
+        }
+        if (step == 0) {
+            $("#prevBtn").hide();
+        }
+        else {
+            $("#prevBtn").show();
+        }
+
+        if (step == 4 ) {
+            $("#nextBtn").hide();
+            $("#startContrib").show();
+        }
+        $("#" + step).show();
+    }
+
+    showStep('next');
+    $("#modal").modal('show');
+</script>
