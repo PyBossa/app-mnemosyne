@@ -59,11 +59,6 @@ def handle_arguments():
                       help="Update Tasks n_answers",
                       metavar="UPDATE-TASKS")
 
-    parser.add_option("-x", "--extra-task", action="store_true",
-                      dest="add_more_tasks",
-                      help="Add more tasks",
-                      metavar="ADD-MORE-TASKS")
-
     # Modify the number of TaskRuns per Task
     # (default 30)
     parser.add_option("-n", "--number-answers",
@@ -145,24 +140,6 @@ def run(app_config, options):
         except:
             format_error("pbclient.update_app", response)
 
-    def create_photo_task(app, photo, question, priority=0):
-        # Data for the tasks
-        task_info = dict(question=question)
-        task_info.update(photo)
-        try:
-            response = pbclient.create_task(app.id, task_info, priority_0=priority)
-            check_api_error(response)
-        except:
-            format_error("pbclient.create_task", response)
-
-    def add_photo_tasks(app):
-        # First of all we get the URL photos
-        # Then, we have to create a set of tasks for the application
-        # For this, we get first the photo URLs from Flickr
-        photos = get_flickr_photos()
-        question = app_config['question']
-        [create_photo_task(app, p, question, priority=random.random()) for p in photos]
-
     pbclient.set('api_key', options.api_key)
     pbclient.set('endpoint', options.api_url)
 
@@ -170,20 +147,17 @@ def run(app_config, options):
         print('Running against PyBosssa instance at: %s' % options.api_url)
         print('Using API-KEY: %s' % options.api_key)
 
-    if options.create_app or options.add_more_tasks:
-        if options.create_app:
-            try:
-                response = pbclient.create_app(app_config['name'],
-                                               app_config['short_name'],
-                                               app_config['description'])
+    if options.create_app:
+        try:
+            print "Creating app"
+            response = pbclient.create_app(app_config['name'],
+                                           app_config['short_name'],
+                                           app_config['description'])
 
-                check_api_error(response)
-                app = setup_app()
-            except:
-                format_error("pbclient.create_app", response)
-        else:
-            app = find_app_by_short_name()
-        add_photo_tasks(app)
+            check_api_error(response)
+            app = setup_app()
+        except:
+            format_error("pbclient.create_app", response)
 
     if options.update_template:
         print "Updating app template"
