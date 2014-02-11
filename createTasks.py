@@ -78,7 +78,7 @@ def handle_arguments():
     (options, args) = parser.parse_args()
 
     if not options.create_app and not options.update_template\
-            and not options.add_more_tasks and not options.update_tasks:
+            and not options.update_tasks:
         parser.error("Please check --help or -h for the available options")
 
     if not options.api_key:
